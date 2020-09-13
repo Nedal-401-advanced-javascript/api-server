@@ -1,0 +1,157 @@
+{
+    "swagger" : "2.0",
+    "info" : {
+      "description" : "defaultDescription",
+      "version" : "0.1",
+      "title" : "defaultTitle"
+    },
+    "paths" : {
+      "/products/" : {
+        "get" : {
+          "produces" : [ "application/json" ],
+          "parameters" : [ ],
+          "responses" : {
+            "200" : {
+              "description" : "Definition generated from Swagger Inspector",
+              "schema" : {
+                "$ref" : "#/definitions/Model3"
+              }
+            }
+          }
+        },
+        "post" : {
+          "consumes" : [ "application/json" ],
+          "produces" : [ "application/json" ],
+          "parameters" : [ {
+            "in" : "body",
+            "name" : "body",
+            "required" : false,
+            "schema" : {
+              "$ref" : "#/definitions/Model1"
+            },
+            "x-examples" : {
+              "application/json" : "{\r\n      \"id\": \"2\",\r\n      \"category\": \"tool\",\r\n      \"name\": \"Hammer\",\r\n      \"display_name\": \"true\",\r\n      \"description\": \"it is small size \"\r\n    }"
+            }
+          } ],
+          "responses" : {
+            "201" : {
+              "description" : "Definition generated from Swagger Inspector",
+              "schema" : {
+                "$ref" : "#/definitions/Model2"
+              }
+            }
+          }
+        }
+      },
+      "/categories/2" : {
+        "delete" : {
+          "consumes" : [ "application/json" ],
+          "produces" : [ "application/json" ],
+          "parameters" : [ {
+            "in" : "body",
+            "name" : "body",
+            "required" : false,
+            "schema" : {
+              "$ref" : "#/definitions/Model0"
+            },
+            "x-examples" : {
+              "application/json" : "{\r\n      \"id\": \"2\",\r\n      \"category\": \"tool\",\r\n      \"name\": \"Hammer\",\r\n      \"display_name\": \"true\",\r\n      \"description\": \"it is small size \"\r\n    }"
+            }
+          } ],
+          "responses" : {
+            "200" : {
+              "description" : "Definition generated from Swagger Inspector",
+              "schema" : {
+                "$ref" : "#/definitions/Model4"
+              }
+            }
+          }
+        }
+      }
+    },
+    "definitions" : {
+      "Model0" : {
+        "properties" : {
+          "id" : {
+            "type" : "string"
+          },
+          "category" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "display_name" : {
+            "type" : "string"
+          },
+          "description" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Model1" : {
+        "properties" : {
+          "id" : {
+            "type" : "string"
+          },
+          "category" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "display_name" : {
+            "type" : "string"
+          },
+          "description" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Model2" : {
+        "properties" : {
+          "id" : {
+            "type" : "string"
+          },
+          "category" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "display_name" : {
+            "type" : "string"
+          },
+          "description" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Array" : {
+        "properties" : {
+          "id" : {
+            "type" : "string"
+          },
+          "category" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "display_name" : {
+            "type" : "string"
+          },
+          "description" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Model3" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/definitions/Array"
+        }
+      },
+      "Model4" : { }
+    }
+  }
