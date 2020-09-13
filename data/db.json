@@ -1,0 +1,40 @@
+{
+  "categories": [
+    {
+      "id": "1",
+      "name": "electronics",
+      "display_name": "true",
+      "description": "collection of the domistic and industrial tools "
+    },
+    {
+      "id": "3",
+      "name": "tools",
+      "display_name": "true",
+      "description": "collection of hand tools for technican"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "category": "food",
+      "name": "apple",
+      "display_name": "true",
+      "description": "it is kind of food"
+    },
+    {
+      "id": "2",
+      "category": "tool",
+      "name": "Hammer",
+      "display_name": "true",
+      "description": "it is small size "
+    },
+    {
+      "name": "screwdriver",
+      "category": "tools",
+      "description": "hand tool",
+      "price": 1.99,
+      "inStock": 0,
+      "id": "611V00M"
+    }
+  ]
+}
