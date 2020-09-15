@@ -2,73 +2,50 @@
 
 const express = require('express');
 const router = express.Router();
-let docsData = require('../data/db.json');
+const product = require('../lib/models/products/products.collection')
 
 
-router.get('/', function (req, res) {
-    res.send(docsData);
-
-});
-
-router.get('/products', (req, res) => {
-    res.send(docsData.products);
+router.get('/products', function (req, res, next) {
+    product.getAll().then(data => {
+        res.status(200).json(data);
+    }).catch(next);
 
 });
 
-router.post('/products', createObj(), (req, res) => {
-    console.log(docsData.products);
-    res.status(201).json(docsData.products);
+router.get('/products/:id', (req, res, next) => {
+    const id = req.params.id;
+    product.get(id).then(data => {
+        res.status(200).json(data);
+    }).catch(next);
+
+});
+
+router.post('/products', (req, res, next) => {
+    product.create(req.body)
+        .then(data => {
+            res.status(201).json(data);
+        }).catch(next);
 })
 
-router.get('/products/:id', findId(), (req, res) => {
-    res.status(201).json(req.choosed)
+router.get('/products/:id', (req, res, next) => {
+    product.get(req.params.id)
+        .then(data => {
+            res.status(201).json(data)
+        }).catch(next);
 })
 
-router.put('/products/:id',findId(),update(), (req, res) => {
-    res.status(201).json(req.choosed)
+router.put('/products/:id', (req, res, next) => {
+    product.update(req.params.id, req.body)
+        .then(data => {
+            res.status(201).json(data)
+        }).catch(next);
 
 })
 
-router.delete('/products/:id',findId(), deleteId(), (req, res) => {
-    res.send(docsData.products);
+router.delete('/products/:id', (req, res, next) => {
+    product.delete(req.params.id)
+        .then(data => {
+            res.send(data);
+        }).catch(next);
 })
-
-function createObj() {
-    return (req, res, next) => {
-        let product = req.body;
-        product.id = docsData.products.length + 1;
-        docsData.products.push(product);
-        next()
-    }
-}
-
-function findId() {
-    return (req, res, next) => {
-        docsData.products.forEach((element,i) => {
-            if (element.id === req.params.id) {
-                req.choosed = element;
-                req.choosedIndex=i;
-            }
-        });
-        req.choosed ? next() : next('Not found')
-    }
-}
-
-function update() {
-    return (req,res,next)=>{
-        Object.keys(req.body).forEach(key=>{
-        req.choosed[key]=req.body[key]
-        })
-        next()
-
-    }
-}
-
-function deleteId() {
-    return (req,res,next)=>{
-        docsData.products.splice(req.choosedIndex, 1)
-        next();
-    }
-}
-
 module.exports = router;
