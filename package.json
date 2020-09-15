@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/Nedal-401-advanced-javascript/api-server/issues"
   },
-  "homepage": "https://github.com/Nedal-401-advanced-javascript/api-server#readme"
+  "homepage": "https://github.com/Nedal-401-advanced-javascript/api-server#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  }
 }
