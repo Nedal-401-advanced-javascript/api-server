@@ -1,10 +1,13 @@
 
 'use strict';
+let category=require('../lib/models/categories/categories.collection')
+let product=require('../lib/models/products/products.collection')
 module.exports=(req, res, next)=> {
     let model = req.params.model;
     switch(model) {
         case "categories":
             req.model = category;
+            console.log(">>>>>>>>>>>>><<<<<<<<<<<<",model);
             next();
             break;
         case "products":
