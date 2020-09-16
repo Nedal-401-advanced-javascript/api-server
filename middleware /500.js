@@ -1,5 +1,5 @@
 'use strict';
-module.exports=(req, req, res, next)=> {
+module.exports=(error, req, res, next)=> {
     console.log("Server side Error 500")
     res.status(500);
     res.json({ error: err });
