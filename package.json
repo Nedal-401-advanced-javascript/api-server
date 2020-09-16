@@ -4,7 +4,7 @@
   "description": "n API to serve data for a virtual storefront, which displays categories and products to a potential shopper",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage --verbose"
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,9 @@
     "express": "^4.17.1",
     "mongoose": "^5.10.5",
     "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@code-fellows/supergoose": "^1.0.11",
+    "jest": "^26.4.2"
   }
 }
