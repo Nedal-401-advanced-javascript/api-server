@@ -6,6 +6,9 @@ const MONGOOSE_URL=process.env.MONGOOSE_url
 
 // connection details should be .env file
 // const MONGOOSE_URL = 'mongodb://localhost:27017/food-db';
+/**
+ * connect the database and start the server
+ */
 
 const mongooseOptions = {
     useNewUrlParser: true,

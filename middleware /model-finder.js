@@ -2,6 +2,17 @@
 'use strict';
 let category=require('../lib/models/categories/categories.collection')
 let product=require('../lib/models/products/products.collection')
+
+/**
+ * 
+ * @param {string} req categories or products
+ * @param {*} res 
+ * @param {string} next middleware
+ * 
+ * @module module-finder
+ * 
+ * @returns {string} switch betwen the categories and products
+ */
 module.exports=(req, res, next)=> {
     let model = req.params.model;
     switch(model) {
