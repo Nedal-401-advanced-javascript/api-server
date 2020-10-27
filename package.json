@@ -4,7 +4,8 @@
   "description": "n API to serve data for a virtual storefront, which displays categories and products to a potential shopper",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage --verbose"
+    "test": "jest --coverage --verbose",
+    "start" : "node index.js"
   },
   "repository": {
     "type": "git",
@@ -16,7 +17,6 @@
   "bugs": {
     "url": "https://github.com/Nedal-401-advanced-javascript/api-server/issues"
   },
-  "homepage": "https://github.com/Nedal-401-advanced-javascript/api-server#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
